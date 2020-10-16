@@ -25,7 +25,7 @@ def rotate():
 			b=int(durMin.get())
 		c=durMax.get()
 		if c=="":
-			c=duration = clip.duration
+			c=0
 		else:
 			c=int(durMin.get())
 		now=datetime.now()
@@ -33,7 +33,7 @@ def rotate():
 		clip1 = clip.subclip(b,c) 
 		d=rotangleEntry.get()
 		if d=="":
-			d=0
+			d = clip.duration
 		else:
 			d=int(rotangleEntry.get())
 		clip2 = clip1.rotate(d) 
