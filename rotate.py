@@ -8,7 +8,7 @@ from datetime import datetime
 
 root=tk.Tk()
 root.title("Video Rotator | Manjunathan C")
-root.geometry("600x600")
+root.geometry("550x600")
 root.config(bg="#4285f4")
 root.iconphoto(True,tk.PhotoImage(file="icon.png"))
 
@@ -25,19 +25,19 @@ def rotate():
 			b=int(durMin.get())
 		c=durMax.get()
 		if c=="":
-			c=0
+			c=clip.duration
 		else:
-			c=int(durMin.get())
+			c=int(durMax.get())
 		now=datetime.now()
 		current_time = now.strftime("%H%M%S")
-		clip1 = clip.subclip(b,c) 
+		clip = clip.subclip(b,c) 
 		d=rotangleEntry.get()
 		if d=="":
-			d = clip.duration
+			d =0
 		else:
 			d=int(rotangleEntry.get())
-		clip2 = clip1.rotate(d) 
-		clip2.ipython_display(width = 1600) 
+		clip = clip.rotate(d) 
+		clip.ipython_display(width = 1600) 
 		file="/root/python/tkinter/rotate/__temp__.mp4"
 		temp="/root/python/tkinter/rotate/video_"+current_time+".mp4"
 		os.rename(file,temp)
@@ -54,6 +54,8 @@ pathLabel.place(x=50,y=20)
 
 pathEntry=Entry(root,fg="#4285f4",bg="black",font=("courier",15,"bold italic"),width=30,borderwidth=6)
 pathEntry.place(x=50,y=50)
+
+
 
 labelDur=Label(root,text="Duration of the clip you want \n(Max and Default is full video length) ",bg="#4285f4",fg="black",font=("courier",15,"bold italic"))
 labelDur.place(x=30,y=100)
