@@ -55,9 +55,6 @@ pathLabel.place(x=50,y=20)
 pathEntry=Entry(root,fg="#4285f4",bg="black",font=("courier",15,"bold italic"),width=30,borderwidth=6)
 pathEntry.place(x=50,y=50)
 
-buttonBrowse=Button(root,text="Browse",fg="#4285f4",bg="black",font=("courier",15,"bold italic"),width=7,borderwidth=6,activebackground="white")
-buttonBrowse.place(x=450,y=46)
-
 labelDur=Label(root,text="Duration of the clip you want \n(Max and Default is full video length) ",bg="#4285f4",fg="black",font=("courier",15,"bold italic"))
 labelDur.place(x=30,y=100)
 
